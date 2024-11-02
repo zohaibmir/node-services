@@ -2,9 +2,11 @@
   "name": "catalog_service",
   "version": "1.0.0",
   "main": "index.js",
-  "type":"module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc -p .",
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +15,11 @@
   "devDependencies": {
     "@types/express": "^5.0.0",
     "@types/node": "^22.8.6",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "nodemon": "^3.1.7"
   },
   "dependencies": {
-    "express": "^4.21.1"
+    "express": "^4.21.1",
+    "ts-node": "^10.9.2"
   }
 }

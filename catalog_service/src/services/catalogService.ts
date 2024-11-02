@@ -18,19 +18,30 @@ export class CatalogService {
         return data;
     }
 
-    updateProduct(input: Product) {
+    async updateProduct(input: Product) {
 
+        const data = await this._repository.update(input);
+        //emit event to update record in Open search
+
+        return data;
     }
 
-    getProducts(limit: number = 10, offset: number) {
+    async getProducts(limit: number = 10, offset: number) : Promise<Product[]>{
 
+        const products = await this._repository.find(limit, offset);
+
+        return products;
     }
 
-    getProduct(id: number) {
+    async getProduct(id: any) {
+        const product = await this._repository.findOne(id);
 
+        return product;
     }
 
-    deleteProduct(id: number) {
-
+    async deleteProduct(id: number) : Promise<number>{
+        const productId = await this._repository.delete(id); 
+        //delete record from Elastic search
+        return productId;
     }
 }

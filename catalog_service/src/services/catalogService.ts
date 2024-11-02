@@ -9,8 +9,10 @@ export class CatalogService {
         this._repository = repository;
     }
 
-    createProduct(input: Product) {
-
+    async createProduct(input: Product) {
+        const data = this._repository.create(input);
+        
+        return data;
     }
 
     updateProduct(input: Product) {

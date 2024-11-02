@@ -11,6 +11,9 @@ export class CatalogService {
 
     async createProduct(input: Product) {
         const data = this._repository.create(input);
+        if(!(await data).id) {
+            throw new Error("Unable to create product");
+        }
         
         return data;
     }

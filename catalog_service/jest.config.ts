@@ -6,6 +6,14 @@
 import type {Config} from 'jest';
 
 const config: Config = {
+  preset: "ts-jest", // A preset that is used as a base for Jest's configuration
+  clearMocks: true, // Automatically clear mock calls, instances, contexts and results before every test
+  collectCoverage: true, // Indicates whether the coverage information should be collected while executing the test
+  verbose: true, // Indicates whether each individual test should be reported during the run
+  coverageDirectory: "coverage", // The directory where Jest should output its coverage files
+  coveragePathIgnorePatterns: ["/node_modules"],// An array of regexp pattern strings used to skip coverage collection
+  coverageProvider: "v8", // Indicates which provider should be used to instrument code for coverage
+  moduleDirectories: ["node_modules", "src"],
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -15,25 +23,8 @@ const config: Config = {
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/gk/nv8rx0pd5yl9f36mbjqdkfb00000gn/T/jest_dx",
 
-  // Automatically clear mock calls, instances, contexts and results before every test
-  clearMocks: true,
-
-  // Indicates whether the coverage information should be collected while executing the test
-  collectCoverage: true,
-
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: undefined,
-
-  // The directory where Jest should output its coverage files
-  coverageDirectory: "coverage",
-
-  // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
-
-  // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -101,7 +92,7 @@ const config: Config = {
   // An enum that specifies notification mode. Requires { notify: true }
   // notifyMode: "failure-change",
 
-  // A preset that is used as a base for Jest's configuration
+  
   // preset: undefined,
 
   // Run tests from one or more projects
@@ -185,9 +176,6 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
-
-  // Indicates whether each individual test should be reported during the run
-  // verbose: undefined,
 
   // An array of regexp patterns that are matched against all source file paths before re-running tests in watch mode
   // watchPathIgnorePatterns: [],

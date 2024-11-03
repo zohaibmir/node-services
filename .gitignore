@@ -1,7 +1,7 @@
 node_modules/
 catalog_service/node_modules/
 order_service/node_modules/
-
+db/db-data/
 # Logs
 logs
 *.log

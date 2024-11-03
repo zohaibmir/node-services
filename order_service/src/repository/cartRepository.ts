@@ -3,7 +3,7 @@ import { CartRepositoryType } from "../../types/Repository";
 
 const createCart = async (input: any): Promise<{}> => {
 
-    return Promise.resolve({message: "test response from cart repository", input});
+    return Promise.resolve({message: "Test response from cart repository", input});
 }
 
 const updateCart = async (input: any): Promise<{}> => {

@@ -10,6 +10,6 @@ POST http://localhost:9000/cart
 Content-Type: "application/application/json"
 
 {
-    "item": "Iphone 16",
+    "item": "Iphone 15",
     "price": 1600
 }

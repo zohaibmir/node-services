@@ -34,7 +34,7 @@ export const HandleErrorWithLogger = (
       logger.warn(error); // ignore common errors caused by user
    }
 
-   return res.status(status).json(data);
+   return next(res.status(status).json(data));
 };
 
 export const HandleUnCaughtException = async (

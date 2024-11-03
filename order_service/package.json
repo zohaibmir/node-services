@@ -15,6 +15,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@axiomhq/pino": "^1.2.0",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/jest": "^29.5.14",
@@ -25,6 +26,7 @@
     "nodemon": "^3.1.7",
     "pino": "^9.5.0",
     "pino-http": "^10.3.0",
+    "pino-pretty": "^11.3.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.2",

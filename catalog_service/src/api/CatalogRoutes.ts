@@ -13,8 +13,9 @@ router.post(
     "/products", 
     async (req: Request, res: Response, next: NextFunction) => {
         const { errors, input } = await RequestValidator(ProductRequest, req.body);
+        console.log(errors);
         if (errors) {
-            
+
             return  next(res.status(400).json(errors));
         }
         const data = await catalogService.createProduct(req.body);

@@ -4,7 +4,7 @@ import { CatalogRepository } from "../../repository/catalogRepository";
 import { CatalogService } from "../catalogService";
 import { faker } from "@faker-js/faker";
 import { Product } from "../../models/product";
-import { Factory } from "rosie";
+import { productFactory } from "../../utils/fixtures";
 
 const mockProduct = ((rest: any) => {
     return {
@@ -15,14 +15,6 @@ const mockProduct = ((rest: any) => {
         ...rest,
     };
 })
-
-//Rosie library
-const productFactory = new Factory<Product>()
-    .attr("id", faker.number.int({ min: 1, max: 1000 }))
-    .attr("name", faker.commerce.productName())
-    .attr("description", faker.commerce.productDescription())
-    .attr("stock", faker.number.int({ min: 10, max: 100 }))
-    .attr("price", +faker.commerce.price());
 
 describe("catalogService", () => {
 

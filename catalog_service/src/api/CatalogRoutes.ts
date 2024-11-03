@@ -4,7 +4,7 @@ import { CatalogRepository } from '../repository/catalogRepository';
 
 const router = express.Router();
 
-const catalogService = new CatalogService(new CatalogRepository());
+export const catalogService = new CatalogService(new CatalogRepository());
 
 router.post(
     "/products", 

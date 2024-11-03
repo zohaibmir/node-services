@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "test": "jest"
+    "test": "jest",
+    "db:generate": "npx drizzle-kit generate",
+    "db:push": "drizzle-kit push:pg",
+    "db:migrate": "tsx ./migration.ts",
+    "db:studio": "drizzle-kit studio --port 6000"
   },
   "keywords": [],
   "author": "",

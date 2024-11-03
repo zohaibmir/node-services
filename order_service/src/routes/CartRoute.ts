@@ -1,7 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import * as service from '../services/cartService';
 import * as repository from '../repository/cartRepository';
-import { ValidateRequest } from "../../utils/validator";
+import { ValidateRequest } from "../utils/validator";
 import { CartRequestInput, CartRequestSchema } from "../dto/cartRequest";
 
 const router = express.Router();

@@ -1,5 +1,5 @@
-import { CartRepositoryType } from "../../types/Repository";
-import { GetProductDetails } from "../../utils/broker";
+import { CartRepositoryType } from "../types/Repository";
+import { GetProductDetails } from "../utils/broker";
 import { CartRequestInput } from "../dto/cartRequest";
 
 export const CreateCart = async (input: CartRequestInput, repo: CartRepositoryType) => {

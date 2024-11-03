@@ -1,4 +1,4 @@
-import { CartRepositoryType } from "../../../types/Repository";
+import { CartRepositoryType } from "../../types/Repository";
 import * as Repository from "../../repository/cartRepository";
 import { CreateCart } from "../cartService"
 

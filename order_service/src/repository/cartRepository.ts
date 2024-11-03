@@ -1,4 +1,4 @@
-import { CartRepositoryType } from "../../types/Repository";
+import { CartRepositoryType } from "../types/Repository";
 import { DB } from "../db/dbConnection";
 import { Cart, CartLineItem, cartLineItems, carts } from "../db/schema";
 

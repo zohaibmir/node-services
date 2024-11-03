@@ -3,12 +3,14 @@ import * as service from '../services/cartService';
 import * as repository from '../repository/cartRepository';
 import { ValidateRequest } from "../utils/validator";
 import { CartRequestInput, CartRequestSchema } from "../dto/cartRequest";
+import {RequestAuthorizer} from "../middleware/middleware";
 
 const router = express.Router();
 const repo = repository.CartRepository;
 
 router.post(
     "/cart",
+    RequestAuthorizer,
     async (req: Request, res: Response, next: NextFunction) => {
         try {
             const err= ValidateRequest<CartRequestInput> (req.body, CartRequestSchema);
@@ -29,15 +31,16 @@ router.post(
 router.get(
     "/cart",
     async (req: Request, res: Response, next: NextFunction) => {
-        const resposne = await service.GetCart(req.body, repo);
+        const resposne = await service.GetCart(req.body.customerId, repo);
         return next(res.status(200).json(resposne));
     }
 );
 
 router.patch(
-    "/cart/:lineItemId",
+    "/cart/:id",
     async (req: Request, res: Response, next: NextFunction) => {
-        const resposne = await service.EditCart(req.body, repo);
+        const lintItemId =  req.params.id;
+        const resposne = await service.EditCart(req.body.customerId, repo);
         return next(res.status(200).json(resposne));
     }
 );

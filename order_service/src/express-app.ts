@@ -11,12 +11,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(httpLogger);
-//app.use{HandleErrorWithLogger};
+
 // Routes
 app.use('/api/health', (req: Request, res: Response, _: NextFunction) => {
     return _(res.status(200).json({message: "Feeling good"}));
 });
 
+//app.use(HandleErrorWithLogger);
 app.use(cartRoute);
 app.use(orderRoute);
 

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { APIError } from "../error";
 
 
 const CATALOG_BASE_URL =
@@ -15,6 +16,6 @@ export const GetProductDetails = async (productId: number) => {
     // );
     // return response.data;
   } catch (error) {
-    throw new Error("product not found");
+    throw new APIError("product not found");
   }
 };

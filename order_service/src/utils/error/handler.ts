@@ -4,6 +4,7 @@ import {
    NotFoundError,
    ValidationError,
 } from './errors';
+import { logger } from '../logger';
 
 export const HandleErrorWithLogger = (
    error: Error,
@@ -28,9 +29,9 @@ export const HandleErrorWithLogger = (
 
    if (reportError) {
       // error reporting tools implementation eg: Cloudwatch,Sentry etc;
-      //logger.error(error);
+      logger.error(error);
    } else {
-      //logger.warn(error); // ignore common errors caused by user
+      logger.warn(error); // ignore common errors caused by user
    }
 
    return res.status(status).json(data);
@@ -40,7 +41,7 @@ export const HandleUnCaughtException = async (
    error: Error,
 ) => {
    // error report / monitoring tools
-   //logger.error(error);
+   logger.error(error);
    // recover
    process.exit(1);
 };

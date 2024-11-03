@@ -10,6 +10,8 @@ POST http://localhost:9000/cart
 Content-Type: "application/application/json"
 
 {
+    "productId": 10,
+    "customerId":12,
     "item": "Iphone 15",
     "price": 1600
 }

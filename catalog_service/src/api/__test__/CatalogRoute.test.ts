@@ -47,5 +47,18 @@ describe("Catalog Routes", () => {
         });
 
         
+        test("response with an internal error code 500", async () => {
+            const requestBody = mockRequest();
+            const product = productFactory.build()
+            jest
+                .spyOn(catalogService, 'createProduct')
+                .mockImplementationOnce(() => Promise.reject(new Error("Error occured on product creation")))
+            const response = await request(app)
+                .post("/products")
+                .send(requestBody)
+                .set("Accept", "application/json");
+            expect(response.status).toBe(500);
+            expect(response.body).toEqual("Error occured on product creation");
+        });
     });
 });
